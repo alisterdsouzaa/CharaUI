@@ -13,6 +13,12 @@ class App(QMainWindow):
         self.setupUI()
 
     def setupUI(self):
+        """
+        Setup of all UI elements.
+        Setup is aligned on the CentralWidget using MainWindow as QVBoxLayout.
+        All the other QHBoxLayouts are layered on top of Main window's QVBoxLayout
+
+        """
         self.setWindowTitle(self.title)
         self.setGeometry(100, 100, 1000, 600)
 
@@ -30,9 +36,9 @@ class App(QMainWindow):
         thirdHorizontalLayout = QHBoxLayout()
 
         # Creating Graph
-        # self.graphWidget = pg.PlotWidget()
-        # self.graphWidget.setBackground('w')  # Set background color to white
-        # graphLayout.addWidget(self.graphWidget)  # Add the graph to the graphLayout
+        self.graphWidget = pg.PlotWidget()
+        self.graphWidget.setBackground('w')  # Set background color to white
+        graphLayout.addWidget(self.graphWidget)
 
         # Stretching all the buttons towards the bottom
         mainWindow.addStretch()
